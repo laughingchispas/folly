@@ -5,6 +5,7 @@ $text-color: white;
 $ff: 'Tinos', serif;
 $hover-color: #001D55;
 $line-color: #912B43;
+$accent-color: #FEBAAA;
 
 @font-face {
   font-family: 'Journal';
@@ -30,14 +31,6 @@ a {
   text-decoration: none;
 }
 
-.subtitle {
-    font-family: $ff;
-    font-size: 20px;
-    color: white;
-    text-align: right;
-    padding: 0 10px 0 0;
-}
-
 #top {
     position: absolute;
     top: 0;
@@ -47,6 +40,8 @@ a {
 
 /****************************************/
 
+
+
 #page {
     position: relative;
     height: 100%;
@@ -54,7 +49,6 @@ a {
     .container-hero-image {
         margin: 0 auto;
         padding: 0;
-        color: $text-color;
         position: absolute;
         top:0;
         left: 0;
@@ -63,46 +57,32 @@ a {
 
         .hero-text {
             font-family: 'Slabo';
-            padding: 80px 0 0 0;
+            background-color: black;
+            padding: 0 0 0 0;
 
-            .top-text {
-                display: flex;
-                justify-content: space-between;
-                font-size: 30px;
-                width: 330px;
-                padding: 0 0 0 15px;
-                margin: 0 auto -20px auto;
-                text-transform: uppercase;
-                letter-spacing: 7px;
-            }
+          .menu {
+            position:absolute;
+            width:100%;
+            opacity: 0;
+            z-index: 2000;
+          }
+          .fixed {
+            position:fixed;
+            top:0;
+            opacity: 1;
+            -webkit-transition: opacity 0.5s ease-in;
+            -moz-transition: opacity 0.5s ease-in;
+            -o-transition: opacity 0.5s ease-in;
+            -ms-transition: opacity 0.5s ease-in;
+            transition: opacity 0.5s ease-in;
+            z-index: 2000;
 
-            .middle-text{
-                .bottom-text {
-                    font-size: 100px;
-                    text-align: center;
-                    font-family: sans-serif;
-
-                    .logo {
-                        font-family: 'Journal';
-                        color: #EE205B;
-                    }
-                }
-            }
-
-            .subtitle {
-                font-family: 'Slabo';
-                text-align: center;
-                padding: 0 0 0 150px;
-                margin: -25px -40px 0 0;
-                font-size: 15px;
-                text-transform: uppercase;
-
-            }
+          }
         }
     }
 
     .arrow-down {
-        background-color: #EE205B;
+        background-color: $accent-color;
         position: absolute;
         bottom: 200px;
         left: 50%;
@@ -114,10 +94,16 @@ a {
     }
 }
 
+#tour-home {
+  background-color: lightgrey;
+  z-index: 500;
+  position: relative;
+}
+
 .container {
     border-width: 2px 0 0 0;
     border-style: solid;
-    border-color: #EE205B;
+    border-color: $accent-color;
     width: 100%;
     padding: 20px 0 0 0;
 
@@ -136,7 +122,7 @@ a {
 
             #logo-embed {
                 font-family: 'Journal';
-                color: #EE205B;
+                color: $accent-color;
                 }
             }
 
@@ -160,13 +146,13 @@ a {
 
             .dot {
                 font-size: 15px;
-                color: #EE205B;
+                color: $accent-color;
                 }
 
             }
 
         .string-quartet {
-            color: #EE205B;
+            color: $accent-color;
             text-align: right;
             font-family: 'Lato';
             position: relative;
@@ -184,7 +170,7 @@ a {
     z-index: 5000;
 
     .arrow-up-test {
-            background-color: #EE205B;
+            background-color: $accent-color;
             width: 20px;
             border-radius: 30px;
             padding: 5px;
@@ -201,7 +187,7 @@ a {
 
     .arrow-down-two {
             position: relative;
-            background-color: #EE205B;
+            background-color: $accent-color;
             width: 20px;
             border-radius: 30px;
             padding: 5px;
@@ -246,7 +232,7 @@ a {
     position: relative;
     border-width: 2px 0 2px 0;
     border-style: solid;
-    border-color: #EE205B;
+    border-color: $accent-color;
 
     .pic-container {
         width: 75%;
@@ -259,7 +245,7 @@ a {
 
         .about {
             font-size: 50px;
-            color: #EE205B;
+            color: $accent-color;
             width: 100%;
             text-align: center;
         }
@@ -276,7 +262,7 @@ a {
             text-indent: 60px;
 
             .pink {
-                color: #EE205B;
+                color: $accent-color;
             }
         }
 
@@ -293,7 +279,7 @@ a {
                 font-family: 'Daniel';
                 font-size: 15px;
                 .pink {
-                    color: #EE205B;
+                    color: $accent-color;
                 }
             }
 
@@ -365,36 +351,6 @@ a {
     }
 }
 
-.footer {
-    height: 100px;
-    background-color: black;
-    color: white;
-    font-family: 'Daniel';
-    text-align: center;
-    font-size: 25px;
-    padding: 20px 0 0 0;
-    margin: 0;
-    position: relative;
-
-    .footer-icons {
-            padding: 10px 0 0 0;
-
-            .icon {
-                background-color: #EE205B;
-                border-radius: 30px;
-                height: 30px;
-                width: 30px;
-            }
-    }
-
-    .footer-info {
-        font-size: 15px;
-        padding: 2px 0;
-    }
-
-}
-
-
 @media only screen and (min-width: 600px) {
 
 
@@ -414,13 +370,7 @@ a {
 
             .hero-text {
                 font-family: 'Slabo';
-                padding: 80px 0 0 0;
-
-                .top-text {
-                    font-size: 30px;
-                    text-align: center;
-
-                }
+                padding: 0 0 0 0;
             }
         }
     }
@@ -433,7 +383,7 @@ a {
     z-index: 5000;
 
     .arrow-up-test {
-        background-color: #EE205B;
+        background-color: $accent-color;
         width: 20px;
         border-radius: 30px;
         padding: 5px;
@@ -450,7 +400,7 @@ a {
 
     .arrow-down-two {
             position: relative;
-            background-color: #EE205B;
+            background-color: $accent-color;
             width: 20px;
             border-radius: 30px;
             padding: 5px;
@@ -495,7 +445,7 @@ a {
 .container {
     border-width: 2px 0 0 0;
     border-style: solid;
-    border-color: #EE205B;
+    border-color: $accent-color;
     width: 100%;
 
     .second-title-container {
@@ -513,7 +463,7 @@ a {
 
             #logo-embed {
                 font-family: 'Journal';
-                color: #EE205B;
+                color: $accent-color;
                 }
             }
         .genre {
@@ -543,13 +493,13 @@ a {
 
             .dot {
                 font-size: 15px;
-                color: #EE205B;
+                color: $accent-color;
                 }
 
             }
 
         .string-quartet {
-            color: #EE205B;
+            color: $accent-color;
             font-family: 'Lato';
             position: relative;
             font-size: 15px;
@@ -571,7 +521,7 @@ a {
         z-index: 5000;
 
         .arrow-up-test {
-            background-color: #EE205B;
+            background-color: $accent-color;
             width: 20px;
             border-radius: 30px;
             padding: 5px;
@@ -588,7 +538,7 @@ a {
 
         .arrow-down-two {
                 position: relative;
-                background-color: #EE205B;
+                background-color: $accent-color;
                 width: 20px;
                 border-radius: 30px;
                 padding: 5px;
